@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles.css">
-    <title>City Bucket</title>
+    <title>CityBucket</title>
   </head>
 
   <body>
@@ -16,6 +16,7 @@
 
     <main>
       <p id="profession"></p>
+    </main>
       <script>
         //fetch data from local storage (use _cb_user key);
         let user = localStorage.getItem("_cb_user");
@@ -25,12 +26,11 @@
 
         //attach user data to DOM
         const profileName = document.getElementById("profile-name");
-        profileName.innerHTML = user.profileName;
+        profileName.innerHTML = user.name;
 
         const profession = document.getElementById("profession");
-        profession.innerHTML = `Title: ${user.profession}`;
+        profession.innerHTML = `Title: ${user.jobTitle}`;
 
       </script>
-    </main>
   </body>
 </html>
