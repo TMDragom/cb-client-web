@@ -4,12 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZeroToCode WaterSources SignUp</title>
+    <link rel="stylesheet" href="/styles.css">
+    <title>City Bucket</title>
   </head>
 
   <body>
-    <h2 id="profile-name"></h2>
-    <p id="profession"></p>
-    <script src="signup.js"></script>
+    <div class="Title">
+      <h1>City Bucket</h1>
+      <h2 id="profile-name"></h2>
+    </div>
+
+    <main>
+      <p id="profession"></p>
+      <script>
+        //fetch data from local storage (use _cb_user key);
+        let user = localStorage.getItem("_cb_user");
+
+        //reverse JSONstringify to convert user value to usable JS obj
+        user = JSON.parse(user);
+
+        //attach user data to DOM
+        const profileName = document.getElementById("profile-name");
+        profileName.innerHTML = user.profileName;
+
+        const profession = document.getElementById("profession");
+        profession.innerHTML = `Title: ${user.profession}`;
+
+      </script>
+    </main>
   </body>
 </html>
